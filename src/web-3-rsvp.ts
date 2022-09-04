@@ -49,6 +49,8 @@ export function handleNewEventCreated(event: NewEventCreated): void {
             event.params.eventDataCID +
             imagePath.toString();
           newEvent.imageURL = imageURL;
+        } else if (imagePath) {
+          newEvent.imageURL = imagePath.toString();
         } else {
           // return fallback image if no imagePath
           const fallbackURL =
